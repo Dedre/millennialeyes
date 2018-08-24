@@ -5,8 +5,110 @@
     <meta charset="utf-8" />
     <title>Millenial Eyes</title>
     <meta name="author" content="Dedré Olwage" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <div id="main-panel">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 heading">
+                <h1>Millennial Eyes</h1>
+                <a href="#" style="display:block" id="positive" onclick="showNegative()"><span class="badge badge-secondary">+</span></a>
+                <a href="#" style="display:none" id="negative" onclick="showPositive()"><span class="badge badge-secondary">-</span></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav class="navbar" data-spy="affix" data-offset-top="100">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Milennial Eyes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#purpose">Purpose</a></li>
+                        <li><a href="#experiences">Experiences</a></li>
+                        <!--<li><a href="#feedback">Feedback</a></li>-->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#"><span class="glyphicon glyphicon-phone"></span> Feedback</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
+        <div class="container-fluid">
+            <div id="purpose">
+                <div class="center-div">
+                    <p>
+                        A window to the world as seen by a millennial.
+                    </p>
+                </div>
+            </div>
+
+            <div id="experiences">
+                <div id="experiences-positive">
+                    <div class="card">
+                        <img class="card-img-top" src="images/Tulips.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Positive Experience</h5>
+                            <p class="card-text">My struggles of getting this website  up and running was easy and fun.</p>
+                        </div>
+                    </div>                
+                </div>
+
+                <div id="experiences-negative" style="display:none">
+                    <div class="card">
+                        <img class="card-img-top" src="images/Tulips.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">First Negative Experience</h5>
+                            <p class="card-text">My struggles of getting this website  up and running was dreadfully hard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+            <div id="feedback">
+                <p class="center">
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function showPositive() {
+            $('#positive').toggle();
+            $('#negative').toggle();
+            $('#experiences-positive').toggle();
+            $('#experiences-negative').toggle();
+            $("body, this").css("background-color", "white");
+            $('.card').each(function () { $('this').css("background-color", "lightgray"); });
+        }
+
+        function showNegative() {
+            $('#negative').toggle();
+            $('#positive').toggle();
+            $('#experiences-negative').toggle();
+            $('#experiences-positive').toggle();
+            $("body, this").css("background-color", "black");
+            $('.card').each(function () { $('this').css("background-color", "darkgray");});
+        }
+
+        $(document).ready(function () {
+
+        });
+    </script>
 </body>
 </html>
